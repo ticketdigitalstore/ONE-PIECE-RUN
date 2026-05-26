@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <title>ONE PIECE RUN INDONESIA 2026</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
 <style>
 
@@ -14,6 +14,10 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
@@ -35,7 +39,7 @@ body::before{
     z-index:-5;
 }
 
-/* GRID VAPORWAVE */
+/* ================= GRID ================= */
 
 .grid{
     position:fixed;
@@ -61,7 +65,7 @@ body::before{
     }
 }
 
-/* CLOUDS */
+/* ================= CLOUD ================= */
 
 .cloud{
     position:absolute;
@@ -167,6 +171,11 @@ nav a{
     text-decoration:none;
     color:white;
     font-weight:600;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#fff400;
 }
 
 /* ================= HERO ================= */
@@ -179,6 +188,7 @@ nav a{
     padding:140px 5% 100px;
     position:relative;
     overflow:hidden;
+    gap:40px;
 }
 
 .hero-content{
@@ -222,6 +232,7 @@ nav a{
     color:white;
     font-weight:700;
     transition:.4s;
+    display:inline-block;
 }
 
 .btn-primary{
@@ -238,7 +249,7 @@ nav a{
     transform:translateY(-8px) scale(1.05);
 }
 
-/* HERO IMAGE */
+/* ================= HERO IMAGE ================= */
 
 .hero-image{
     width:50%;
@@ -247,8 +258,6 @@ nav a{
     justify-content:center;
     align-items:center;
 }
-
-/* GLOW CIRCLE */
 
 .hero-image::before{
     content:"";
@@ -275,6 +284,7 @@ nav a{
     position:relative;
     z-index:2;
     animation:float 4s ease-in-out infinite;
+    transition:transform .2s linear;
 }
 
 .poster img{
@@ -285,7 +295,7 @@ nav a{
     0 0 100px #fff40066;
 }
 
-/* FLOAT */
+/* ================= FLOAT ================= */
 
 @keyframes float{
     0%,100%{
@@ -394,10 +404,13 @@ nav a{
 
 .cta-box{
     background:
-    linear-gradient(135deg,
+    linear-gradient(
+    135deg,
     rgba(255,0,0,.25),
     rgba(0,208,255,.25),
-    rgba(255,244,0,.25));
+    rgba(255,244,0,.25)
+    );
+
     border-radius:50px;
     padding:80px;
     text-align:center;
@@ -462,6 +475,10 @@ footer{
         font-size:50px;
     }
 
+    .cta-box{
+        padding:50px 30px;
+    }
+
     .cta-box h2{
         font-size:50px;
     }
@@ -486,10 +503,10 @@ footer{
     </div>
 
     <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Event</a></li>
-        <li><a href="#">Gallery</a></li>
-        <li><a href="#">Register</a></li>
+        <li><a href="https://ticketdigitalstore.github.io/FROM-ONE-PIECE/">Home</a></li>
+        <li><a href="https://ticketdigitalstore.github.io/FROM-ONE-PIECE/">Event</a></li>
+        <li><a href="https://ticketdigitalstore.github.io/FROM-ONE-PIECE/">Gallery</a></li>
+        <li><a href="https://ticketdigitalstore.github.io/FROM-ONE-PIECE/">Register</a></li>
     </ul>
 
 </nav>
@@ -513,11 +530,19 @@ footer{
 
         <div class="buttons">
 
-            <a href="#" class="btn btn-primary">
+            <a 
+                href="https://ticketdigitalstore.github.io/FROM-ONE-PIECE/"
+                class="btn btn-primary"
+                target="_blank"
+            >
                 REGISTER NOW
             </a>
 
-            <a href="#" class="btn btn-secondary">
+            <a 
+                href="https://ticketdigitalstore.github.io/FROM-ONE-PIECE/"
+                class="btn btn-secondary"
+                target="_blank"
+            >
                 WATCH TRAILER
             </a>
 
@@ -528,7 +553,7 @@ footer{
     <div class="hero-image">
 
         <div class="poster">
-            <img src="2641.jpg">
+            <img src="2641.jpg" alt="ONE PIECE RUN" />
         </div>
 
     </div>
@@ -615,7 +640,11 @@ footer{
 
         <div class="buttons" style="justify-content:center; margin-top:40px;">
 
-            <a href="#" class="btn btn-primary">
+            <a 
+                href="https://ticketdigitalstore.github.io/FROM-ONE-PIECE/"
+                class="btn btn-primary"
+                target="_blank"
+            >
                 GET TICKET
             </a>
 
@@ -631,7 +660,11 @@ footer{
 
 <script>
 
-/* COUNTDOWN */
+/* ================= REDIRECT ALL BUTTONS ================= */
+
+const redirectURL = "https://ticketdigitalstore.github.io/FROM-ONE-PIECE/";
+
+/* ================= COUNTDOWN ================= */
 
 const targetDate = new Date("June 7, 2026 00:00:00").getTime();
 
@@ -645,14 +678,14 @@ setInterval(()=>{
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    document.getElementById("days").innerHTML = days;
-    document.getElementById("hours").innerHTML = hours;
-    document.getElementById("minutes").innerHTML = minutes;
-    document.getElementById("seconds").innerHTML = seconds;
+    document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
+    document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
+    document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+    document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
 
 },1000);
 
-/* PARALLAX */
+/* ================= PARALLAX ================= */
 
 document.addEventListener("mousemove", e=>{
 
@@ -663,6 +696,18 @@ document.addEventListener("mousemove", e=>{
 
     poster.style.transform =
     `rotateY(${x}deg) rotateX(${-y}deg)`;
+
+});
+
+/* ================= BUTTON AUTO REDIRECT ================= */
+
+document.querySelectorAll(".btn").forEach(button=>{
+
+    button.addEventListener("click", ()=>{
+
+        window.location.href = redirectURL;
+
+    });
 
 });
 
